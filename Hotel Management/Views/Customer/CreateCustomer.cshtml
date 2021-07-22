@@ -1,0 +1,68 @@
+﻿@model Hotel_Management.Models.CustomerModel
+
+@{
+    ViewBag.Title = "CreateCustomer";
+}
+
+<h2>Add Customer</h2>
+
+<form action="CreateCustomer" method="post">
+
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <label class="col-md-2">Name</label>
+            <div class="col-md-10">
+                <input type="text" name="cust_name" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2">Id Type</label>
+            <div class="col-md-10">
+                <select name="cust_identity_type" class="form-control">
+                    <option value="AadharCard">Aadhar Card</option>
+                    <option value="License">Driving License</option>
+                    <option value="PanCard">Pan Card</option>
+                    <option value="Passport">Passport</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2">Id Number</label>
+            <div class="col-md-10">
+                <input type="text" name="cust_identity" class="form-control" />
+            </div>
+        </div><div class="form-group">
+            <label class="col-md-2">Address</label>
+            <div class="col-md-10">
+                <textarea name="cust_address" class="form-control"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2">Gender</label>
+            <div class="col-md-10">
+                <select name="cust_gender" class="form-control">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="form-group">
+                <input type="submit" name="Save" value="Save" class="btn-primary col-lg-1" /> &nbsp;
+                <input type="button" name="Cancel" value="Cancel" class="btn-warning col-lg-1" />
+            </div>
+
+        </div>
+        <div class="form-group">
+
+        </div>
+    </div>
+
+
+</form>
+

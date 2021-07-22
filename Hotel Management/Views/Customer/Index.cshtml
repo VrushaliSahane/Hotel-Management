@@ -1,0 +1,44 @@
+﻿@model List<Hotel_Management.Models.CustomerModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customer Details</h2>
+
+<form action="Index" method="Get">
+
+    <a href="@Url.Action("CreateCustomer","Customer")" class="btn btn-primary">Create Customer</a>
+    <br />
+    &nbsp;
+    <table style="table-layout: auto; text-align :center " class=" table table-bordered table-responsive table-striped">
+        <thead>
+            <tr>
+                <td>Customer Name</td>
+                <td>Id Type</td>
+                <td>Id No</td>
+                <td>Gender</td>
+                <td>Address</td>
+                <td>Room No</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.cust_name</td>
+                <td>@item.cust_identity_type</td>
+                <td>@item.cust_identity</td>
+                <td>@item.cust_gender</td>
+                <td>@item.cust_address</td>
+                <td>@item.room_no</td>
+                <td>
+                    <a href="@Url.Action("Room","Customer",new { id = @item.room_id })" class="btn btn-success">Assign Room</a>
+                    <a href="@Url.Action("Edit","Customer",new { id = @item.cust_id })" class="btn btn-primary">Edit</a>
+                    <a href="@Url.Action("Delete","Customer",new { id = @item.cust_id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+</form>
+

@@ -1,0 +1,78 @@
+﻿
+@model Hotel_Management.Models.CustomerModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Remove Customer</h2>
+
+<form action="~/Customer/Delete/@Model.cust_id" method="post">
+
+    <div class="form-horizontal">
+        <input type="hidden" name="cust_id" value="@Model.cust_id" />
+        <div class="form-group">
+            <label class="col-md-2">Name</label>
+            <div class="col-md-10">
+                <input type="text" name="cust_name" class="form-control" value="@Model.cust_name" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2">Id Type</label>
+            <div class="col-md-10">
+                <select name="cust_identity_type" class="form-control">
+                    <option value="AadharCard">Aadhar Card</option>
+                    <option value="License">Driving License</option>
+                    <option value="PanCard">Pan Card</option>
+                    <option value="Passport">Passport</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2">Id Number</label>
+            <div class="col-md-10">
+                <input type="text" name="cust_identity" class="form-control" value="@Model.cust_identity" />
+            </div>
+        </div><div class="form-group">
+            <label class="col-md-2">Address</label>
+            <div class="col-md-10">
+                <textarea name="cust_address" class="form-control">@Model.cust_address</textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2">Gender</label>
+            <div class="col-md-10">
+                @if (Model.cust_gender == "Male")
+                {
+                    <select name="cust_gender" class="form-control">
+                        <option selected="selected" value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                }
+                else
+                {
+                    <select name="cust_gender" class="form-control">
+                        <option value="Male">Male</option>
+                        <option selected="selected" value="Female">Female</option>
+                    </select>
+                }
+            </div>
+        </div>
+
+
+        <div>
+            <div class="form-group">
+                <input type="submit" name="Delete" value="Delete" class="btn-danger col-lg-1" /> &nbsp;
+            </div>
+
+        </div>
+        <div class="form-group">
+
+        </div>
+    </div>
+
+
+</form>
+
